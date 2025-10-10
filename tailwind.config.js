@@ -11,6 +11,7 @@ export default {
         background: '#EDEDED',
         foreground: '#C0B8B3',
         secondary: '#4D2612',
+        accent: '#6A3D28',
       },
     },
   },

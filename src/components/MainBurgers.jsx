@@ -4,6 +4,7 @@ import burgerExplosive from '../assets/imgs/burger-explosive.jpg';
 import cheeseburgerDouble from '../assets/imgs/cheeseburger-double.jpg';
 import simpleBurger from '../assets/imgs/burger-simple.jpg';
 import veganoBurger from '../assets/imgs/vegano-burger.jpg';
+import Button from './Button';
 
 const MainBurgers = () => {
   const OPTIONS = {};
@@ -20,7 +21,10 @@ const MainBurgers = () => {
       <h2 className="text-2xl text-primary text-center font-semibold my-7">
         Confira nossos deliciosos hambúrgueres
       </h2>
-      <Carousel burgers={MAIN_BURGER} options={OPTIONS} />
+      <div className="flex flex-col justify-center items-center">
+        <Carousel burgers={MAIN_BURGER} options={OPTIONS} />
+        <Button>Quero ver o cardápio completo</Button>
+      </div>
     </div>
   );
 };
