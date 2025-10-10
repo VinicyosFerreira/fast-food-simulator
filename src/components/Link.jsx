@@ -2,7 +2,7 @@ const Link = ({ href, children }) => {
   return (
     <a
       href={href}
-      className="font-semibold hover:text-secondary/50 transition rounded-md cursor-pointer"
+      className="font-semibold cursor-pointer hover:text-secondary/50 transition rounded-md"
     >
       {children}
     </a>
