@@ -2,7 +2,7 @@ import Button from './Button';
 
 const PromotionCampaign = () => {
   return (
-    <div className="mx-8 my-12 w-[35%] space-y-2">
+    <div className="mx-8 my-12 md:w-[35%] space-y-2">
       <h2 className="text-xl text-primary font-semibold">
         Campanha de promoção
       </h2>

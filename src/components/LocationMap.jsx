@@ -1,6 +1,6 @@
 const LocationMap = () => {
   return (
-    <div className="w-[55%]">
+    <div className="md:w-[55%]">
       <h2 className="text-xl text-primary font-semibold text-center mb-4">
         Confira nossa localização principal
       </h2>

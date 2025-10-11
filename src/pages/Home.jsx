@@ -11,7 +11,7 @@ const HomePage = () => {
       <Header />
       <Slogan />
       <MainBurgers />
-      <div className="flex mx-auto items-center w-[85%] my-14 gap-4">
+      <div className="md:flex mx-auto items-center w-[85%] my-14 gap-4">
         <PromotionCampaign />
         <LocationMap />
       </div>
