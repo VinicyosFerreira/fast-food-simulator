@@ -1,7 +1,7 @@
 const LocationMap = () => {
   return (
     <div className="md:w-[55%]">
-      <h2 className="text-xl text-primary font-semibold text-center mb-4">
+      <h2 className="mb-4 text-center text-xl font-semibold text-primary">
         Confira nossa localização principal
       </h2>
       <iframe

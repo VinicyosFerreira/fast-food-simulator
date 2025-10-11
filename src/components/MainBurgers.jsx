@@ -18,10 +18,10 @@ const MainBurgers = () => {
 
   return (
     <div className="my-5">
-      <h2 className="text-2xl text-primary text-center font-semibold my-7">
+      <h2 className="my-7 text-center text-2xl font-semibold text-primary">
         Confira nossos deliciosos hambúrgueres
       </h2>
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col items-center justify-center">
         <Carousel burgers={MAIN_BURGER} options={OPTIONS} />
         <Button>Quero ver o cardápio completo</Button>
       </div>

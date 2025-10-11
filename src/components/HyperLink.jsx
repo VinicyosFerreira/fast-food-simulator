@@ -12,7 +12,7 @@ const HyperLink = ({ to, children }) => {
   return (
     <Link
       to={to}
-      className={`font-semibold cursor-pointer ${getVariantResponsive()} transition rounded-md`}
+      className={`cursor-pointer font-semibold ${getVariantResponsive()} rounded-md transition`}
     >
       {children}
     </Link>

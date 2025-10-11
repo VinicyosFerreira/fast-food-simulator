@@ -1,9 +1,6 @@
 const Button = ({ children }) => {
   return (
-    <button
-      className="my-3 p-3 rounded-lg md:w-[280px] text-foreground text-sm 
-        font-semibold hover:bg-accent transition bg-primary"
-    >
+    <button className="my-3 rounded-lg bg-primary p-3 text-sm font-semibold text-foreground transition hover:bg-accent md:w-[280px]">
       {children}
     </button>
   );
