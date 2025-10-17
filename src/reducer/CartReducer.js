@@ -34,5 +34,15 @@ export const cartReducer = (state, action) => {
         cart: [...state.cart, { ...action.payload, quantity: 1 }],
       };
     }
+
+    // Remover produto do carrinho
+    case 'REMOVE_CART':
+      console.log(state.cart);
+      return {
+        ...state,
+        cart: state.cart.filter((item) => {
+          return item.id !== action.payload.id;
+        }),
+      };
   }
 };
