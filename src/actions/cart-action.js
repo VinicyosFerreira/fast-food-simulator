@@ -3,11 +3,49 @@ export const ADD_CART = (dispatch, optionType) => {
     type: 'ADD_CART',
     payload: optionType,
   });
+  dispatch({
+    type: 'CALCULATE_TOTAL',
+    payload: optionType,
+  });
 };
 
 export const REMOVE_CART = (dispatch, optionType) => {
   dispatch({
     type: 'REMOVE_CART',
+    payload: optionType,
+  });
+  dispatch({
+    type: 'CALCULATE_TOTAL',
+    payload: optionType,
+  });
+};
+
+export const INCREMENT_CART = (dispatch, optionType) => {
+  dispatch({
+    type: 'INCREMENT_CART',
+    payload: optionType,
+  });
+  dispatch({
+    type: 'CALCULATE_TOTAL',
+    payload: optionType,
+  });
+};
+
+export const DECREMENT_CART = (dispatch, optionType) => {
+  dispatch({
+    type: 'DECREMENT_CART',
+    payload: optionType,
+  });
+
+  if (optionType.quantity === 1) {
+    dispatch({
+      type: 'REMOVE_CART',
+      payload: optionType,
+    });
+  }
+
+  dispatch({
+    type: 'CALCULATE_TOTAL',
     payload: optionType,
   });
 };
