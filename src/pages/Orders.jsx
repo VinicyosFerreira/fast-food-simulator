@@ -8,8 +8,21 @@ import PaymentMethod from '../components/PaymentMethod';
 import { GiNotebook } from 'react-icons/gi';
 import { useState } from 'react';
 const OrdersPage = () => {
+  const initialValuesFields = {
+    name: '',
+    cpf: '',
+    cep: '',
+    address: '',
+    number: '',
+    paymentMethod: '',
+    cardNumber: '',
+    cardHolder: '',
+    cardExpirationDate: '',
+    cardCvv: '',
+  };
+
   const [step, setStep] = useState(0);
-  const [fields, setFields] = useState();
+  const [fields, setFields] = useState(initialValuesFields);
 
   const nextStep = () => {
     setStep((stepParams) => stepParams + 1);
@@ -45,6 +58,7 @@ const OrdersPage = () => {
           nextStep={nextStep}
           prevStep={prevStep}
           handleFields={handleFields}
+          fields={fields}
         />
       ),
     },

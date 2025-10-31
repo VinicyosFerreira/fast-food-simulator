@@ -19,6 +19,7 @@ const PaymentMethod = ({ prevStep, handleFields, fields }) => {
           value={'pix'}
           className="size-4"
           onChange={(e) => handleFields('paymentMethod', e.target.value)}
+          checked={fields.paymentMethod === 'pix'}
         />
       </div>
 
@@ -33,6 +34,7 @@ const PaymentMethod = ({ prevStep, handleFields, fields }) => {
           value={'card'}
           name="payment-methods"
           className="size-4"
+          checked={fields.paymentMethod === 'card'}
           onChange={(e) => handleFields('paymentMethod', e.target.value)}
         />
       </div>
@@ -48,6 +50,7 @@ const PaymentMethod = ({ prevStep, handleFields, fields }) => {
           value={'money'}
           name="payment-methods"
           className="size-4"
+          checked={fields.paymentMethod === 'money'}
           onChange={(e) => handleFields('paymentMethod', e.target.value)}
         />
       </div>
@@ -58,9 +61,10 @@ const PaymentMethod = ({ prevStep, handleFields, fields }) => {
             type="text"
             id="card-number"
             label="Número do cartão"
+            value={fields.cardNumber}
             name="card-number"
             placeholder="Digite o número do cartão"
-            onChange={(e) => handleFields('card-number', e.target.value)}
+            onChange={(e) => handleFields('cardNumber', e.target.value)}
           />
 
           <Input
@@ -68,8 +72,9 @@ const PaymentMethod = ({ prevStep, handleFields, fields }) => {
             id="card-holder"
             name="card-holder"
             label="Titular do cartão"
+            value={fields.cardHolder}
             placeholder="Digite o titular do cartão"
-            onChange={(e) => handleFields('owner-card', e.target.value)}
+            onChange={(e) => handleFields('cardHolder', e.target.value)}
           />
 
           <div className="flex w-full gap-2">
@@ -78,8 +83,11 @@ const PaymentMethod = ({ prevStep, handleFields, fields }) => {
               type="date"
               id="expiration-date"
               width="w-[70%]"
+              value={fields.expirationDate}
               name="expiration-date"
-              onChange={(e) => handleFields('expiration-date', e.target.value)}
+              onChange={(e) =>
+                handleFields('cardExpirationDate', e.target.value)
+              }
               placeholder="Data de vencimento"
             />
 
@@ -88,8 +96,9 @@ const PaymentMethod = ({ prevStep, handleFields, fields }) => {
               type="text"
               width="CVV"
               id="card-cvv"
+              value={fields.cardCvv}
               name="card-cvv"
-              onChange={(e) => handleFields('card-cvv', e.target.value)}
+              onChange={(e) => handleFields('cardCvv', e.target.value)}
               placeholder="CVV"
             />
           </div>

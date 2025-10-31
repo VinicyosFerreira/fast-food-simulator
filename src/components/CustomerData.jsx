@@ -1,7 +1,7 @@
 import Button from '../components/Button';
 import Input from './Input';
 
-const CustomerData = ({ nextStep, prevStep, handleFields }) => {
+const CustomerData = ({ nextStep, prevStep, handleFields, fields }) => {
   return (
     <div className="mx-auto flex w-[450px] flex-col items-center justify-center gap-2 rounded-md bg-foreground/10 p-5">
       <Input
@@ -9,6 +9,7 @@ const CustomerData = ({ nextStep, prevStep, handleFields }) => {
         type="text"
         id="name"
         name="name"
+        value={fields.name}
         placeholder="Digite seu nome"
         onChange={(e) => handleFields('name', e.target.value)}
       />
@@ -17,6 +18,7 @@ const CustomerData = ({ nextStep, prevStep, handleFields }) => {
         label="CPF"
         type="text"
         id="cpf"
+        value={fields.cpf}
         name="cpf"
         placeholder="Digite seu CPF"
         onChange={(e) => handleFields('cpf', e.target.value)}
@@ -26,6 +28,7 @@ const CustomerData = ({ nextStep, prevStep, handleFields }) => {
         label="CEP"
         type="text"
         id="cep"
+        value={fields.cep}
         name="cep"
         placeholder="Digite seu CEP"
         onChange={(e) => handleFields('cep', e.target.value)}
@@ -37,6 +40,7 @@ const CustomerData = ({ nextStep, prevStep, handleFields }) => {
           type="text"
           id="address"
           width="w-[70%]"
+          value={fields.address}
           name="address"
           placeholder="Digite seu endereço"
           onChange={(e) => handleFields('address', e.target.value)}
@@ -46,6 +50,7 @@ const CustomerData = ({ nextStep, prevStep, handleFields }) => {
           label="Número"
           type="text"
           width="w-[30%]"
+          value={fields.number}
           id="number"
           name="number"
           onChange={(e) => handleFields('number', e.target.value)}
