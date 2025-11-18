@@ -3,9 +3,20 @@ import { BsCreditCard2BackFill } from 'react-icons/bs';
 import { GiMoneyStack } from 'react-icons/gi';
 import Input from './Input';
 import Button from '../components/Button';
+import { useState } from 'react';
+import OrderDetailsDialog from './OrderDetailsDialog';
 
 const PaymentMethod = ({ prevStep, register, errors, watch }) => {
   const paymentMethods = watch('paymentSchema.paymentMethods');
+  const [isOpenDialog, setIsOpenDialog] = useState(false);
+
+  const openDialog = () => {
+    setIsOpenDialog(true);
+  };
+
+  const closeDialog = () => {
+    setIsOpenDialog(false);
+  };
 
   return (
     <div className="mx-auto flex w-[450px] flex-col gap-2 rounded-md bg-foreground/10 p-5">
@@ -120,6 +131,15 @@ const PaymentMethod = ({ prevStep, register, errors, watch }) => {
           Voltar
         </Button>
       </div>
+
+      <Button
+        onClick={() => openDialog()}
+        className="w-[200px]"
+        variant={{ color: 'ghost' }}
+      >
+        Ver detalhe do pedido
+      </Button>
+      {isOpenDialog && <OrderDetailsDialog closeDialog={closeDialog} />}
     </div>
   );
 };
