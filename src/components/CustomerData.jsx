@@ -1,7 +1,19 @@
+import { useContext, useEffect } from 'react';
 import Button from '../components/Button';
 import Input from './Input';
+import { CartContext } from '../context/CartContext';
+import { useNavigate } from 'react-router';
 
-const CustomerData = ({ nextStep, prevStep, register, errors }) => {
+const CustomerData = ({ nextStep, register, errors }) => {
+  const { cartState } = useContext(CartContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (cartState.cart.length === 0) {
+      navigate('/cart');
+    }
+  }, [cartState.cart, navigate]);
+
   return (
     <div className="mx-auto flex w-[450px] flex-col items-center justify-center gap-2 rounded-md bg-foreground/10 p-5">
       <Input
@@ -64,11 +76,8 @@ const CustomerData = ({ nextStep, prevStep, register, errors }) => {
       </div>
 
       <div className="mt-2 flex w-full items-center justify-between">
-        <Button onClick={() => nextStep()} className="w-[200px]">
+        <Button onClick={() => nextStep()} className="w-full">
           Avançar
-        </Button>
-        <Button onClick={() => prevStep()} className="w-[200px]">
-          Voltar
         </Button>
       </div>
     </div>
