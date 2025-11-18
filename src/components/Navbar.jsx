@@ -28,7 +28,7 @@ const Navbar = () => {
         </span>
         <HyperLink to="/">Home</HyperLink>
         <HyperLink to="/menu">Cardápio</HyperLink>
-        <HyperLink to="/orders">Pedidos</HyperLink>
+        <HyperLink to="/cart">Carrinho</HyperLink>
       </nav>
     </div>
   );
