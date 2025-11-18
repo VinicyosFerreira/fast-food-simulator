@@ -8,11 +8,11 @@ const MainBurgers = () => {
   const selectedBurgers = MENU_OPTIONS.filter((burger) => burger.highlight);
 
   return (
-    <div className="my-5">
-      <h2 className="my-7 text-center text-2xl font-semibold text-primary">
+    <div className="mt-20">
+      <h2 className="my-3 text-center text-xl font-semibold text-primary">
         Confira nossos deliciosos hambúrgueres
       </h2>
-      <div className="flex flex-col items-center justify-center gap-4">
+      <div className="mx-auto flex w-[90%] flex-col items-center justify-center gap-4">
         <Carousel burgers={selectedBurgers} options={OPTIONS} />
         <Button variant={{ type: 'link' }} to="/menu">
           Quero ver o cardápio completo
