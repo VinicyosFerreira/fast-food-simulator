@@ -7,6 +7,7 @@ import OrdersPage from './pages/Orders.jsx';
 import NotFoundPage from './pages/NotFound.jsx';
 import './index.css';
 import { CartContextProvider } from './context/CartContext.jsx';
+import CartPage from './pages/Cart.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: '/menu',
     element: <MenuPage />,
+  },
+  {
+    path: '/cart',
+    element: <CartPage />,
   },
   {
     path: '/orders',

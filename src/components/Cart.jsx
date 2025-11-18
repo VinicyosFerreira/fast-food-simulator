@@ -8,19 +8,27 @@ import { useContext } from 'react';
 import EmptyCart from './EmptyCart';
 import { FaPlus, FaMinus, FaTrash } from 'react-icons/fa';
 import Button from './Button';
+import { useNavigate } from 'react-router';
+import { FaShoppingCart } from 'react-icons/fa';
 
-const Cart = ({ nextStep }) => {
+const Cart = () => {
   const { cartState, dispatchCart } = useContext(CartContext);
+  const navigate = useNavigate();
 
   if (cartState.cart.length === 0) {
     return <EmptyCart />;
   }
 
   return (
-    <div>
+    <div className="mt-8">
+      <div className="flex items-center justify-center gap-2">
+        <FaShoppingCart className="text-2xl" />
+        <p className="font-semibold">Seu Carrinho</p>
+      </div>
+
       {cartState.cart &&
         cartState.cart.map((item) => (
-          <div key={item.id} className="mx-auto flex w-[90%] gap-3 pb-7">
+          <div key={item.id} className="mx-auto flex w-[90%] gap-3 pb-5 pt-5">
             <img
               src={item.imgUrl}
               alt={item.name}
@@ -49,7 +57,7 @@ const Cart = ({ nextStep }) => {
         <h2 className="text-2xl font-bold">
           Total: {cartState.total.toFixed(2)}R$
         </h2>
-        <Button className="w-[200px]" onClick={() => nextStep()}>
+        <Button className="w-[200px]" onClick={() => navigate('/orders')}>
           Finalizar compra
         </Button>
       </div>
